@@ -37,9 +37,6 @@ body {
     radial-gradient(circle at 85% 12%, rgba(217, 107, 84, 0.28), transparent 30rem),
     linear-gradient(135deg, #050403 0%, #161008 52%, #070504 100%);
   font-family:
-    "Noto Sans Telugu",
-    "Nirmala UI",
-    "Gautami",
     ui-sans-serif,
     system-ui,
     -apple-system,
@@ -184,19 +181,20 @@ p {
 }
 
 h1 {
-  max-width: 760px;
+  max-width: 640px;
   margin-bottom: 1.35rem;
-  font-size: clamp(4rem, 10.5vw, 9.2rem);
-  line-height: 0.88;
-  letter-spacing: -0.045em;
+  font-size: clamp(3.3rem, 8.5vw, 7.4rem);
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+  text-transform: lowercase;
 }
 
 h2 {
   max-width: 930px;
   margin-bottom: 1.4rem;
-  font-size: clamp(2.25rem, 5.8vw, 5.4rem);
-  line-height: 0.98;
-  letter-spacing: -0.035em;
+  font-size: clamp(2rem, 4.8vw, 4.45rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
 }
 
 h3 {
@@ -249,7 +247,7 @@ p {
 
 .hero-collage {
   position: relative;
-  min-height: 690px;
+  min-height: 640px;
   overflow: visible;
   perspective: 1000px;
   transform: rotateX(var(--tilt-y)) rotateY(var(--tilt-x));
@@ -274,51 +272,36 @@ p {
 }
 
 .main-photo {
-  inset: 5% 4% 16% 16%;
+  inset: 10% 4% 8% 18%;
   transform: translateZ(10px);
 }
 
 .baby-photo {
   left: 0;
   top: 0;
-  width: 48%;
-  height: 28%;
-  transform: translateZ(86px) rotate(-4deg);
+  width: 44%;
+  height: 25%;
+  transform: translateZ(86px) rotate(-3deg);
 }
 
 .side-photo {
   right: 0;
   bottom: 0;
-  width: 43%;
-  height: 36%;
-  transform: translateZ(110px) rotate(3deg);
+  width: 40%;
+  height: 30%;
+  transform: translateZ(90px) rotate(2deg);
 }
 
-.caption-chip {
-  position: absolute;
-  z-index: 2;
-  max-width: 220px;
-  border: 1px solid rgba(255, 248, 237, 0.22);
-  border-radius: 20px;
-  padding: 0.95rem 1rem;
-  background: rgba(20, 12, 7, 0.62);
-  backdrop-filter: blur(18px);
-  color: var(--ink);
-  font-weight: 900;
-  line-height: 1.35;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+.main-photo img {
+  object-position: 62% 50%;
 }
 
-.chip-one {
-  top: 10%;
-  right: 3%;
-  transform: translateZ(140px);
+.baby-photo img {
+  object-position: 50% 44%;
 }
 
-.chip-two {
-  left: 8%;
-  bottom: 13%;
-  transform: translateZ(150px);
+.side-photo img {
+  object-position: 48% 45%;
 }
 
 .section {
@@ -446,6 +429,7 @@ p {
   backdrop-filter: blur(18px);
   color: var(--ink);
   font-weight: 900;
+  pointer-events: none;
 }
 
 .footer {
@@ -516,7 +500,7 @@ p {
   }
 
   .hero-collage {
-    min-height: 620px;
+    min-height: 600px;
     overflow: clip;
   }
 
@@ -547,35 +531,26 @@ p {
   }
 
   h1 {
-    font-size: clamp(3.05rem, 18vw, 5.6rem);
+    font-size: clamp(3rem, 16vw, 5.2rem);
   }
 
   .hero-collage {
-    min-height: 520px;
+    min-height: 500px;
   }
 
   .main-photo {
-    inset: 9% 0 17% 7%;
+    inset: 11% 0 12% 8%;
   }
 
   .baby-photo {
-    width: 55%;
-    height: 25%;
+    width: 54%;
+    height: 23%;
   }
 
   .side-photo {
     right: 4%;
-    width: 46%;
-    height: 31%;
-  }
-
-  .caption-chip {
-    max-width: 170px;
-    font-size: 0.86rem;
-  }
-
-  .chip-one {
-    right: 8%;
+    width: 44%;
+    height: 28%;
   }
 
   .section {
