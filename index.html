@@ -1,31 +1,156 @@
 <!doctype html>
-<html lang="en">
+<html lang="te">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Father's Day Websites</title>
+    <title>నాన్నకు ఫాదర్స్ డే శుభాకాంక్షలు</title>
+    <meta
+      name="description"
+      content="నాన్న కోసం ప్రేమతో చేసిన ఫాదర్స్ డే జ్ఞాపకాల వెబ్‌సైట్."
+    />
+    <meta name="author" content="mukeshkr-19, sanjaykrishnamurthy005@gmail.com" />
     <link rel="stylesheet" href="shared/styles.css" />
   </head>
-  <body class="launcher">
-    <main class="launch-shell">
-      <p class="eyebrow">Built for Sanjay by Mira</p>
-      <h1>Two Father's Day experiences, one cinematic system.</h1>
-      <p class="launch-copy">
-        Open either version, swap the photos inside <code>shared/assets/photos</code>,
-        and edit the small config block at the top of each page.
-      </p>
-      <div class="launch-grid">
-        <a class="launch-card" href="sites/father-one/index.html">
+  <body>
+    <canvas id="memory-field" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="glow glow-one" aria-hidden="true"></div>
+    <div class="glow glow-two" aria-hidden="true"></div>
+
+    <header class="nav">
+      <a href="#top" class="mark">నాన్న</a>
+      <nav aria-label="Page sections">
+        <a href="#memories">జ్ఞాపకాలు</a>
+        <a href="#letter">లేఖ</a>
+        <a href="#gallery">ఫోటోలు</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" data-reveal>
+        <div class="hero-text">
+          <p class="eyebrow">ఫాదర్స్ డే 2026</p>
+          <h1>నాన్నకు ఫాదర్స్ డే శుభాకాంక్షలు.</h1>
+          <p class="lead">
+            ప్రతి నిశ్శబ్ద త్యాగానికి, ప్రతి ప్రయాణానికి, ప్రతి పాఠానికి,
+            కష్టమైన విషయాలు కూడా సాధ్యమే అనిపించిన ప్రతి క్షణానికి,
+            ఈ చిన్న బహుమతి.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#letter">నా మనసులోని మాట</a>
+            <a class="ghost-btn" href="#gallery">ఫోటోలు చూడండి</a>
+          </div>
+        </div>
+
+        <div class="hero-collage" data-tilt>
+          <figure class="hero-photo main-photo">
+            <img src="shared/assets/photos/family-airport.jpg" alt="నాన్న, అమ్మ, సంజయ్ కలిసి ఉన్న ఫోటో" />
+          </figure>
+          <figure class="hero-photo baby-photo">
+            <img src="shared/assets/photos/father-baby.jpg" alt="చిన్నప్పుడు నాన్నతో సంజయ్" />
+          </figure>
+          <figure class="hero-photo side-photo">
+            <img src="shared/assets/photos/dad-sanjay-airport.jpg" alt="ఎయిర్‌పోర్ట్ దగ్గర నాన్న మరియు సంజయ్" />
+          </figure>
+          <div class="caption-chip chip-one">నిశ్శబ్దంగా ఇచ్చిన బలం</div>
+          <div class="caption-chip chip-two">ఇంటి అనుభూతి అంటే నాన్న</div>
+        </div>
+      </section>
+
+      <section id="memories" class="section intro-band" data-reveal>
+        <p class="eyebrow">మన కథ</p>
+        <h2>మీరు చెప్పిన మాటలకంటే, మీరు చూపించిన జీవితం ఎక్కువగా నేర్పింది.</h2>
+        <p>
+          ప్రేమ ఎప్పుడూ పెద్దగా కనిపించదు. కొన్ని సార్లు అది ఒక ఫోన్ కాల్,
+          ఒక ప్రయాణం, ఒక ఆందోళన, ఒక నిశ్శబ్దంగా నిలబడి ఉండటం.
+          మీరు అలాంటి ప్రేమను మాకు ప్రతిరోజూ చూపించారు.
+        </p>
+      </section>
+
+      <section class="memory-grid section" aria-label="జ్ఞాపకాలు">
+        <article class="memory-card text-card" data-reveal>
           <span>01</span>
-          <strong>Dad Website One</strong>
-          <small>Finished first version with motion, memory cards, and device tilt.</small>
-        </a>
-        <a class="launch-card" href="sites/father-two/index.html">
+          <h3>శాంతిగా నిలిచే బలం</h3>
+          <p>
+            విషయాలు గందరగోళంగా ఉన్నప్పుడు కూడా, “పర్వాలేదు, మనం చూసుకుందాం”
+            అనిపించే ధైర్యం మీ వల్ల వచ్చింది.
+          </p>
+        </article>
+        <figure class="memory-card image-card large" data-reveal>
+          <img src="shared/assets/photos/dad-daughters.jpg" alt="నాన్న కుమార్తెలతో కలిసి ఉన్న ఫోటో" />
+        </figure>
+        <figure class="memory-card image-card tall" data-reveal>
+          <img src="shared/assets/photos/dad-airport-arch.jpg" alt="ఎయిర్‌పోర్ట్ వద్ద నాన్న నిలబడిన ఫోటో" />
+        </figure>
+        <article class="memory-card text-card warm" data-reveal>
           <span>02</span>
-          <strong>Dad Website Two</strong>
-          <small>Same visual system, separate copy and photo slots.</small>
-        </a>
-      </div>
+          <h3>కష్టపడటం నేర్పిన మనిషి</h3>
+          <p>
+            ప్రేమ అంటే మాటలు మాత్రమే కాదు అని మీరు నేర్పారు. బాధ్యతగా ఉండటం,
+            మళ్లీ మళ్లీ ప్రయత్నించడం, కుటుంబం కోసం నిలబడటం కూడా ప్రేమే.
+          </p>
+        </article>
+        <figure class="memory-card image-card wide" data-reveal>
+          <img src="shared/assets/photos/dad-train.jpg" alt="రైలులో నాన్నతో కలిసి ఉన్న ఫోటో" />
+        </figure>
+      </section>
+
+      <section id="letter" class="letter-section section" data-reveal>
+        <div class="letter-card" data-tilt>
+          <p class="eyebrow">సంజయ్ నుండి</p>
+          <h2>ధన్యవాదాలు నాన్న.</h2>
+          <p>
+            నేను ఎప్పుడూ బాగా చెప్పలేకపోవచ్చు. కానీ మీరు చేసిన కష్టం, మీరు ఇచ్చిన
+            నమ్మకం, మీరు మాకు ఇచ్చిన రక్షణ నాకు కనిపిస్తూనే ఉంటాయి.
+          </p>
+          <p>
+            నేను ఇంకా నేర్చుకుంటున్నాను, ఇంకా ఎదుగుతున్నాను. కానీ నా వెనుక మీరు
+            ఉన్నారు అనే భావన నాకు చాలా పెద్ద బలం. ఈ రోజు మీకు కూడా మీరు మాకు
+            ఇచ్చినంత ప్రేమ, శాంతి, గర్వం అనిపించాలి.
+          </p>
+          <strong>ప్రేమతో, సంజయ్</strong>
+        </div>
+      </section>
+
+      <section id="gallery" class="section gallery-section" data-reveal>
+        <div class="gallery-heading">
+          <p class="eyebrow">జ్ఞాపకాల గ్యాలరీ</p>
+          <h2>కాలం మారినా, ఈ క్షణాలు మాత్రం అలాగే ఉంటాయి.</h2>
+        </div>
+        <div class="gallery">
+          <figure class="gallery-photo landscape">
+            <img src="shared/assets/photos/father-baby.jpg" alt="చిన్నప్పటి జ్ఞాపకం" />
+            <figcaption>ఆ మొదటి రోజుల నుంచే...</figcaption>
+          </figure>
+          <figure class="gallery-photo portrait">
+            <img src="shared/assets/photos/dad-sanjay-airport.jpg" alt="నాన్నతో సంజయ్" />
+            <figcaption>ప్రతి ప్రయాణంలో తోడు</figcaption>
+          </figure>
+          <figure class="gallery-photo portrait">
+            <img src="shared/assets/photos/dad-airport-arch.jpg" alt="నాన్న ఫోటో" />
+            <figcaption>మన కుటుంబానికి నిలువెత్తు బలం</figcaption>
+          </figure>
+          <figure class="gallery-photo landscape">
+            <img src="shared/assets/photos/dad-train.jpg" alt="రైలు ప్రయాణంలో జ్ఞాపకం" />
+            <figcaption>చిన్న చిన్న ప్రయాణాలు, పెద్ద జ్ఞాపకాలు</figcaption>
+          </figure>
+          <figure class="gallery-photo portrait">
+            <img src="shared/assets/photos/dad-traditional.jpg" alt="సాంప్రదాయ దుస్తుల్లో నాన్నతో సంజయ్" />
+            <figcaption>గర్వంగా నిలిచే క్షణం</figcaption>
+          </figure>
+          <figure class="gallery-photo landscape">
+            <img src="shared/assets/photos/dad-daughters.jpg" alt="నాన్న కుటుంబంతో" />
+            <figcaption>కుటుంబం అంటే మీ చుట్టూ చేరే ప్రేమ</figcaption>
+          </figure>
+        </div>
+      </section>
     </main>
+
+    <footer class="footer">
+      <p>ఫాదర్స్ డే శుభాకాంక్షలు నాన్న. ఈ రోజు మీకోసం.</p>
+      <span>Made with love by Sanjay</span>
+    </footer>
+
+    <script src="shared/app.js"></script>
   </body>
 </html>

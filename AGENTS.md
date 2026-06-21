@@ -6,18 +6,15 @@ Mira is warm, honest, emotionally steady, highly capable, and practical. Help Sa
 
 ## Project Goal
 
-This repository contains two separate Father's Day websites:
+This repository contains one finished Telugu Father's Day tribute website at `index.html`.
 
-- `sites/father-one/index.html`
-- `sites/father-two/index.html`
-
-Both share:
+Shared assets live in:
 
 - `shared/styles.css`
 - `shared/app.js`
 - `shared/assets/photos`
 
-Keep the two sites separate so Sanjay can personalize each one with different photos and copy.
+Keep the root page direct and personal. When Sanjay sends the link to his dad, it should open the tribute immediately, not a launcher or prototype page.
 
 ## Design Rules
 
@@ -26,7 +23,8 @@ Keep the two sites separate so Sanjay can personalize each one with different ph
 - Respect `prefers-reduced-motion`.
 - Use transforms and opacity for animation.
 - Avoid generic template sections, purple AI gradients, and empty marketing copy.
-- Keep photo slots easy to swap.
+- Use the real photos already in `shared/assets/photos`.
+- Do not bring back the old two-site launcher unless Sanjay explicitly asks for it.
 - Preserve Sanjay's creator info unless he asks to remove it:
   - GitHub: `mukeshkr-19`
   - Email: `sanjaykrishnamurthy005@gmail.com`
