@@ -39,6 +39,17 @@ window.addEventListener("deviceorientation", (event) => {
   root.style.setProperty("--tilt-y", `${beta * -0.16}deg`);
 }, { passive: true });
 
+function updateClimbProgress() {
+  const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+  const progress = clamp(window.scrollY / maxScroll, 0, 1);
+  root.style.setProperty("--scroll-progress", progress.toFixed(4));
+  root.style.setProperty("--mountain-y", `${Math.round(progress * -260)}px`);
+}
+
+updateClimbProgress();
+window.addEventListener("scroll", updateClimbProgress, { passive: true });
+window.addEventListener("resize", updateClimbProgress, { passive: true });
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {

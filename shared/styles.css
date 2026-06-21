@@ -13,6 +13,8 @@
   --tilt-y: 0deg;
   --pointer-x: 50vw;
   --pointer-y: 20vh;
+  --scroll-progress: 0;
+  --mountain-y: 0px;
 }
 
 * {
@@ -33,8 +35,7 @@ body {
   overflow-x: hidden;
   color: var(--ink);
   background:
-    radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(248, 198, 109, 0.22), transparent 28rem),
-    radial-gradient(circle at 85% 12%, rgba(217, 107, 84, 0.28), transparent 30rem),
+    radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(248, 198, 109, 0.2), transparent 28rem),
     linear-gradient(135deg, #050403 0%, #161008 52%, #070504 100%);
   font-family:
     ui-sans-serif,
@@ -44,6 +45,64 @@ body {
     "Segoe UI",
     sans-serif;
   letter-spacing: 0;
+}
+
+.mountain-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(5, 4, 3, 0.88) 0%, rgba(5, 4, 3, 0.64) 38%, rgba(5, 4, 3, 0.28) 68%, rgba(5, 4, 3, 0.76) 100%),
+    linear-gradient(180deg, rgba(5, 4, 3, 0.32), rgba(5, 4, 3, 0.72)),
+    url("assets/photos/mountain-journey-bg.png");
+  background-position: center calc(48% + var(--mountain-y));
+  background-size: cover;
+  transform: scale(calc(1.06 - (var(--scroll-progress) * 0.025)));
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.climb-progress {
+  position: fixed;
+  right: clamp(18px, 3vw, 42px);
+  top: 18vh;
+  z-index: 15;
+  width: 52px;
+  height: 58vh;
+  pointer-events: none;
+  opacity: 0.82;
+}
+
+.trail-line {
+  position: absolute;
+  inset: 0;
+  border-right: 2px solid rgba(255, 248, 237, 0.24);
+  border-radius: 50%;
+  transform: skewY(-18deg);
+}
+
+.trail-line::before {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: 0;
+  width: 2px;
+  height: calc(var(--scroll-progress) * 100%);
+  border-radius: 999px;
+  background: linear-gradient(var(--gold), rgba(255, 255, 255, 0.86));
+  box-shadow: 0 0 22px rgba(248, 198, 109, 0.56);
+}
+
+.trail-dot {
+  position: absolute;
+  right: -7px;
+  top: calc(var(--scroll-progress) * (100% - 16px));
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  background: var(--gold);
+  box-shadow: 0 0 0 8px rgba(248, 198, 109, 0.12), 0 0 26px rgba(248, 198, 109, 0.8);
 }
 
 img {
@@ -100,7 +159,7 @@ a {
 .glow-two {
   right: -13vw;
   top: 4vh;
-  background: var(--rose);
+  background: #ffb36b;
 }
 
 .nav {
@@ -157,7 +216,7 @@ a {
   align-items: center;
   gap: clamp(2rem, 7vw, 6rem);
   min-height: calc(100vh - 78px);
-  padding: 58px 0 96px;
+  padding: 72px 0 112px;
 }
 
 .hero > * {
@@ -255,6 +314,18 @@ p {
   transition: transform 700ms var(--ease);
 }
 
+.hero::after {
+  content: "scroll down, it climbs with you";
+  position: absolute;
+  left: max(16px, calc((100vw - 1180px) / 2));
+  bottom: 24px;
+  color: rgba(255, 248, 237, 0.52);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .hero-photo,
 .memory-card,
 .gallery-photo,
@@ -306,11 +377,35 @@ p {
 
 .section {
   padding: 92px 0;
+  position: relative;
+}
+
+.altitude {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 248, 237, 0.62);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.altitude::before {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
 }
 
 .intro-band {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+  background: rgba(8, 6, 4, 0.48);
+  backdrop-filter: blur(14px);
+  border-radius: 34px;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
 }
 
 .intro-band p:not(.eyebrow) {
@@ -322,6 +417,11 @@ p {
   grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: minmax(220px, auto);
   gap: 1rem;
+}
+
+.memory-grid .altitude {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
 }
 
 .memory-card {
@@ -375,7 +475,7 @@ p {
   padding: clamp(1.5rem, 5vw, 4.2rem);
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.045)),
-    rgba(18, 11, 7, 0.78);
+    rgba(18, 11, 7, 0.82);
   transform: rotateX(calc(var(--tilt-y) * 0.45)) rotateY(calc(var(--tilt-x) * 0.45));
   transition: transform 700ms var(--ease);
 }
@@ -475,6 +575,14 @@ p {
     display: none;
   }
 
+  .climb-progress {
+    right: 10px;
+    top: 24vh;
+    height: 42vh;
+    transform: scale(0.78);
+    transform-origin: top right;
+  }
+
   .nav,
   .hero,
   .section,
@@ -497,6 +605,10 @@ p {
     grid-template-columns: 1fr;
     min-height: auto;
     padding-top: 40px;
+  }
+
+  .hero::after {
+    display: none;
   }
 
   .hero-collage {
